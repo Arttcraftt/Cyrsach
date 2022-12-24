@@ -43,6 +43,7 @@
             this.Enterer = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
+            this.labelCategory = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.категориитоваровBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet4)).BeginInit();
             this.SuspendLayout();
@@ -51,11 +52,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 50);
+            this.label1.Location = new System.Drawing.Point(8, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 21);
+            this.label1.Size = new System.Drawing.Size(93, 21);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Категория";
+            this.label1.Text = "Категория:";
             // 
             // textBoxName
             // 
@@ -171,12 +172,23 @@
             this.labelID.TabIndex = 22;
             this.labelID.Text = "Новый";
             // 
+            // labelCategory
+            // 
+            this.labelCategory.AutoSize = true;
+            this.labelCategory.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCategory.Location = new System.Drawing.Point(96, 50);
+            this.labelCategory.Name = "labelCategory";
+            this.labelCategory.Size = new System.Drawing.Size(89, 21);
+            this.labelCategory.TabIndex = 23;
+            this.labelCategory.Text = "Категория";
+            // 
             // Item_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(266, 311);
+            this.Controls.Add(this.labelCategory);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Enterer);
@@ -214,5 +226,6 @@
         public System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label labelID;
+        public System.Windows.Forms.Label labelCategory;
     }
 }

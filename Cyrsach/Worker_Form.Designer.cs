@@ -49,6 +49,7 @@
             this.Enterer = new System.Windows.Forms.Button();
             this.textBoxTelephone = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.labelPost = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet8)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             // comboBoxPost
             // 
+            this.comboBoxPost.Cursor = System.Windows.Forms.Cursors.Default;
             this.comboBoxPost.DataSource = this.должностиBindingSource;
             this.comboBoxPost.DisplayMember = "Название";
             this.comboBoxPost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -154,11 +156,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Location = new System.Drawing.Point(0, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
+            this.label1.Size = new System.Drawing.Size(100, 21);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Должность";
+            this.label1.Text = "Должность:";
             // 
             // textBoxPassword
             // 
@@ -233,12 +235,24 @@
             this.label8.TabIndex = 38;
             this.label8.Text = "Телефон";
             // 
+            // labelPost
+            // 
+            this.labelPost.AutoSize = true;
+            this.labelPost.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPost.Location = new System.Drawing.Point(92, 42);
+            this.labelPost.Name = "labelPost";
+            this.labelPost.Size = new System.Drawing.Size(93, 21);
+            this.labelPost.TabIndex = 40;
+            this.labelPost.Text = "должность";
+            this.labelPost.Visible = false;
+            // 
             // Worker_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(263, 449);
+            this.Controls.Add(this.labelPost);
             this.Controls.Add(this.textBoxTelephone);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Enterer);
@@ -288,5 +302,6 @@
         private System.Windows.Forms.Button Enterer;
         public System.Windows.Forms.TextBox textBoxTelephone;
         private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label labelPost;
     }
 }

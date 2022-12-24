@@ -11,7 +11,7 @@ namespace Cyrsach
         public static OleDbConnection connection;
         private static OleDbCommand command;
         public static OleDbDataAdapter dataAdapter;
-        public static DataTable bufferTable;
+        public DataTable bufferTable;
         public Query(string Conn)
         {
             connection = new OleDbConnection(Conn);
@@ -94,6 +94,17 @@ namespace Cyrsach
             dataAdapter.Fill(bufferTable);
             return int.Parse(bufferTable.Rows[0][0].ToString());
         }
+        //метод конвентирования Кода в Категории товаров/Должности
+        public string ID_To_Name_Categories(int ID, string TableName)
+        {
+            connection.Open();
+            dataAdapter = new OleDbDataAdapter($"SELECT Название FROM [{TableName}]\n WHERE Код = {ID}", connection);
+            connection.Close();
+            bufferTable.Reset();
+            dataAdapter.Fill(bufferTable);
+            return bufferTable.Rows[0][0].ToString();
+
+        }
         //метод конвентирования названий Товаров/Клиентов/Сотрудников в ID
         public int Name_To_ID_Datas(string Name, string TableName)
         {
@@ -104,9 +115,14 @@ namespace Cyrsach
             dataAdapter.Fill(bufferTable);
             return int.Parse(bufferTable.Rows[0][0].ToString());
         }
+        //метод, возвращающий строку со значениями по заданому ID и назанию таблицы
         public DataTable buffer_return(int ID, string TableName)
         {
-            dataAdapter = new OleDbDataAdapter($"SELECT * FROM [{TableName}] WHERE ID = \'{ID}\'", connection);
+            connection.Open();
+            dataAdapter = new OleDbDataAdapter($"SELECT * FROM [{TableName}] WHERE ID = {ID}", connection);
+            bufferTable.Clear();
+            dataAdapter.Fill(bufferTable);
+            connection.Close();
             return bufferTable;
         }
 
