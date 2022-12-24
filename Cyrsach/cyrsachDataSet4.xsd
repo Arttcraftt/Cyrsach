@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="cyrsachDataSet4" targetNamespace="http://tempuri.org/cyrsachDataSet4.xsd" xmlns:mstns="http://tempuri.org/cyrsachDataSet4.xsd" xmlns="http://tempuri.org/cyrsachDataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cyrsachConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cyrsachConnectionString (Settings)" PropertyReference="ApplicationSettings.Cyrsach.Properties.Settings.GlobalReference.Default.cyrsachConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Категории_товаровTableAdapter" GeneratorDataComponentClassName="Категории_товаровTableAdapter" Name="Категории_товаров" UserDataComponentName="Категории_товаровTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cyrsachConnectionString (Settings)" DbObjectName="Категории_товаров" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Название FROM Категории_товаров</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="cyrsachDataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="cyrsachDataSet4" msprop:Generator_DataSetName="cyrsachDataSet4">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Категории_товаров" msprop:Generator_RowEvHandlerName="Категории_товаровRowChangeEventHandler" msprop:Generator_RowDeletedName="Категории_товаровRowDeleted" msprop:Generator_RowDeletingName="Категории_товаровRowDeleting" msprop:Generator_RowEvArgName="Категории_товаровRowChangeEvent" msprop:Generator_TablePropName="Категории_товаров" msprop:Generator_RowChangedName="Категории_товаровRowChanged" msprop:Generator_RowChangingName="Категории_товаровRowChanging" msprop:Generator_TableClassName="Категории_товаровDataTable" msprop:Generator_RowClassName="Категории_товаровRow" msprop:Generator_TableVarName="tableКатегории_товаров" msprop:Generator_UserTableName="Категории_товаров">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Название" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_UserColumnName="Название" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

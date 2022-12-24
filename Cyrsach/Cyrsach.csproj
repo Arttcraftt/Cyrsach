@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DFAD28EE-21B1-4019-BDC0-056AADB443F7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Cyrsach</RootNamespace>
+    <AssemblyName>Cyrsach</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminReadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminReadForm.Designer.cs">
+      <DependentUpon>AdminReadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Autorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autorization.Designer.cs">
+      <DependentUpon>Autorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ByingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ByingForm.Designer.cs">
+      <DependentUpon>ByingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassSQLNQ.cs" />
+    <Compile Include="ConnStr.cs" />
+    <Compile Include="Customer_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_Form.Designer.cs">
+      <DependentUpon>Customer_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet5.cs">
+      <DependentUpon>cyrsachDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cyrsachDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cyrsachDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Item_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item_Form.Designer.cs">
+      <DependentUpon>Item_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tranzak_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tranzak_Form.Designer.cs">
+      <DependentUpon>Tranzak_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker_Form.Designer.cs">
+      <DependentUpon>Worker_Form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminReadForm.resx">
+      <DependentUpon>AdminReadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Autorization.resx">
+      <DependentUpon>Autorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ByingForm.resx">
+      <DependentUpon>ByingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_Form.resx">
+      <DependentUpon>Customer_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item_Form.resx">
+      <DependentUpon>Item_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Tranzak_Form.resx">
+      <DependentUpon>Tranzak_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker_Form.resx">
+      <DependentUpon>Worker_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="cyrsachDataSet.xsc">
+      <DependentUpon>cyrsachDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet.xss">
+      <DependentUpon>cyrsachDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet1.xsc">
+      <DependentUpon>cyrsachDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet1.xss">
+      <DependentUpon>cyrsachDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet2.xsc">
+      <DependentUpon>cyrsachDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet2.xss">
+      <DependentUpon>cyrsachDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet3.xsc">
+      <DependentUpon>cyrsachDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet3.xss">
+      <DependentUpon>cyrsachDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet4.xsc">
+      <DependentUpon>cyrsachDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet4.xss">
+      <DependentUpon>cyrsachDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet5.xsc">
+      <DependentUpon>cyrsachDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet5.xss">
+      <DependentUpon>cyrsachDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet6.xsc">
+      <DependentUpon>cyrsachDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet6.xss">
+      <DependentUpon>cyrsachDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet7.xsc">
+      <DependentUpon>cyrsachDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet7.xss">
+      <DependentUpon>cyrsachDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet8.xsc">
+      <DependentUpon>cyrsachDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet8.xss">
+      <DependentUpon>cyrsachDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet9.xsc">
+      <DependentUpon>cyrsachDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="cyrsachDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cyrsachDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cyrsachDataSet9.xss">
+      <DependentUpon>cyrsachDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Cyrsach.cyrsachDataSet5TableAdapters.СотрудникиTableAdapter.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cyrsach.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
