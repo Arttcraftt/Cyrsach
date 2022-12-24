@@ -49,7 +49,9 @@
             this.товарыTableAdapter = new Cyrsach.cyrsachDataSet7TableAdapters.ТоварыTableAdapter();
             this.cyrsachDataSet51 = new Cyrsach.cyrsachDataSet5();
             this.сотрудникиBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.labelFamilia = new System.Windows.Forms.Label();
+            this.labelWorker = new System.Windows.Forms.Label();
+            this.labelCustom = new System.Windows.Forms.Label();
+            this.labelItem = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникиBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.клиентыBindingSource)).BeginInit();
@@ -86,7 +88,7 @@
             this.Enterer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Enterer.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Enterer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Enterer.Location = new System.Drawing.Point(16, 209);
+            this.Enterer.Location = new System.Drawing.Point(16, 215);
             this.Enterer.Name = "Enterer";
             this.Enterer.Size = new System.Drawing.Size(239, 30);
             this.Enterer.TabIndex = 31;
@@ -123,19 +125,19 @@
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(16, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 21);
+            this.label4.Size = new System.Drawing.Size(68, 21);
             this.label4.TabIndex = 28;
-            this.label4.Text = "Клиент";
+            this.label4.Text = "Клиент:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(12, 151);
+            this.label3.Location = new System.Drawing.Point(12, 157);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 21);
+            this.label3.Size = new System.Drawing.Size(60, 21);
             this.label3.TabIndex = 26;
-            this.label3.Text = "Товар";
+            this.label3.Text = "Товар:";
             // 
             // label1
             // 
@@ -177,7 +179,7 @@
             this.comboBoxItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.comboBoxItem.FormattingEnabled = true;
-            this.comboBoxItem.Location = new System.Drawing.Point(16, 175);
+            this.comboBoxItem.Location = new System.Drawing.Point(16, 181);
             this.comboBoxItem.Name = "comboBoxItem";
             this.comboBoxItem.Size = new System.Drawing.Size(239, 28);
             this.comboBoxItem.TabIndex = 35;
@@ -215,16 +217,38 @@
             this.сотрудникиBindingSource1.DataMember = "Сотрудники";
             this.сотрудникиBindingSource1.DataSource = this.cyrsachDataSet5;
             // 
-            // labelFamilia
+            // labelWorker
             // 
-            this.labelFamilia.AutoSize = true;
-            this.labelFamilia.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFamilia.Location = new System.Drawing.Point(112, 50);
-            this.labelFamilia.Name = "labelFamilia";
-            this.labelFamilia.Size = new System.Drawing.Size(80, 21);
-            this.labelFamilia.TabIndex = 36;
-            this.labelFamilia.Text = "фамилия";
-            this.labelFamilia.Visible = false;
+            this.labelWorker.AutoSize = true;
+            this.labelWorker.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelWorker.Location = new System.Drawing.Point(107, 50);
+            this.labelWorker.Name = "labelWorker";
+            this.labelWorker.Size = new System.Drawing.Size(89, 21);
+            this.labelWorker.TabIndex = 36;
+            this.labelWorker.Text = "сотрудник";
+            this.labelWorker.Visible = false;
+            // 
+            // labelCustom
+            // 
+            this.labelCustom.AutoSize = true;
+            this.labelCustom.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCustom.Location = new System.Drawing.Point(76, 102);
+            this.labelCustom.Name = "labelCustom";
+            this.labelCustom.Size = new System.Drawing.Size(62, 21);
+            this.labelCustom.TabIndex = 37;
+            this.labelCustom.Text = "клиент";
+            this.labelCustom.Visible = false;
+            // 
+            // labelItem
+            // 
+            this.labelItem.AutoSize = true;
+            this.labelItem.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelItem.Location = new System.Drawing.Point(65, 157);
+            this.labelItem.Name = "labelItem";
+            this.labelItem.Size = new System.Drawing.Size(54, 21);
+            this.labelItem.TabIndex = 38;
+            this.labelItem.Text = "товар";
+            this.labelItem.Visible = false;
             // 
             // Tranzak_Form
             // 
@@ -232,7 +256,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(269, 256);
-            this.Controls.Add(this.labelFamilia);
+            this.Controls.Add(this.labelItem);
+            this.Controls.Add(this.labelCustom);
+            this.Controls.Add(this.labelWorker);
             this.Controls.Add(this.comboBoxItem);
             this.Controls.Add(this.comboBoxCustomer);
             this.Controls.Add(this.labelID);
@@ -280,6 +306,8 @@
         private cyrsachDataSet7TableAdapters.ТоварыTableAdapter товарыTableAdapter;
         private cyrsachDataSet5 cyrsachDataSet51;
         private System.Windows.Forms.BindingSource сотрудникиBindingSource1;
-        public System.Windows.Forms.Label labelFamilia;
+        public System.Windows.Forms.Label labelWorker;
+        public System.Windows.Forms.Label labelCustom;
+        public System.Windows.Forms.Label labelItem;
     }
 }

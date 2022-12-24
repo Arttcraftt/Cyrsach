@@ -82,7 +82,7 @@
             this.имяDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.отчествоDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.телефонDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Filterpanel = new System.Windows.Forms.Panel();
             this.comboBoxTabelsFilter = new System.Windows.Forms.ComboBox();
             this.FilterButton = new System.Windows.Forms.Button();
             this.comboBoxValue = new System.Windows.Forms.ComboBox();
@@ -104,7 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerDataGrid)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.Filterpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // WorkerDataGrid
@@ -530,17 +530,17 @@
             this.телефонDataGridViewTextBoxColumn1.HeaderText = "Телефон";
             this.телефонDataGridViewTextBoxColumn1.Name = "телефонDataGridViewTextBoxColumn1";
             // 
-            // panel1
+            // Filterpanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.comboBoxTabelsFilter);
-            this.panel1.Controls.Add(this.FilterButton);
-            this.panel1.Controls.Add(this.comboBoxValue);
-            this.panel1.Controls.Add(this.comboBoxAttributesFilter);
-            this.panel1.Location = new System.Drawing.Point(599, 578);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(222, 139);
-            this.panel1.TabIndex = 10;
+            this.Filterpanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Filterpanel.Controls.Add(this.comboBoxTabelsFilter);
+            this.Filterpanel.Controls.Add(this.FilterButton);
+            this.Filterpanel.Controls.Add(this.comboBoxValue);
+            this.Filterpanel.Controls.Add(this.comboBoxAttributesFilter);
+            this.Filterpanel.Location = new System.Drawing.Point(599, 578);
+            this.Filterpanel.Name = "Filterpanel";
+            this.Filterpanel.Size = new System.Drawing.Size(222, 139);
+            this.Filterpanel.TabIndex = 10;
             // 
             // comboBoxTabelsFilter
             // 
@@ -621,7 +621,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1061, 726);
             this.Controls.Add(this.UpDatebutton);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Filterpanel);
             this.Controls.Add(this.CustomerDataGrid);
             this.Controls.Add(this.labelFLnames);
             this.Controls.Add(this.label1);
@@ -649,7 +649,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerDataGrid)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.Filterpanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -703,7 +703,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn телефонDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Filterpanel;
         private System.Windows.Forms.ComboBox comboBoxTabelsFilter;
         private System.Windows.Forms.Button FilterButton;
         private System.Windows.Forms.ComboBox comboBoxValue;

@@ -2,7 +2,6 @@
 using System;
 using System.Data.OleDb;
 using System.Data;
-using System.Xml.Linq;
 
 namespace Cyrsach
 {
@@ -17,6 +16,7 @@ namespace Cyrsach
             connection = new OleDbConnection(Conn);
             bufferTable = new DataTable();
         }
+
         //сортировка таблицы 
         public DataTable upDateTable(string TableName, string attribute, string modifier)
         {
@@ -27,6 +27,7 @@ namespace Cyrsach
             connection.Close();
             return bufferTable;
         }
+
         //методы добавления в таблицы
         public void Add(string familia, string FirstName, string LastName, string telephone)
         {
@@ -64,6 +65,7 @@ namespace Cyrsach
             command.ExecuteNonQuery();
             connection.Close();
         }
+
         //метод удаления
         public void Delete(int ID, string TableName)
         {
@@ -72,6 +74,7 @@ namespace Cyrsach
             command.ExecuteNonQuery();
             connection.Close();
         }
+
         //метод покупки товаров
         public void Bying(int Worker, int Customer, int Item)
         {
@@ -85,7 +88,8 @@ namespace Cyrsach
             command = new OleDbCommand($"UPDATE [Товары] SET Количество = Количество - 1 WHERE ID = {Item}", connection);
             command.ExecuteNonQuery();
             connection.Close();
-        } 
+        }
+
         //метод конвентирования названий Категорий товаров/Должностей в Код
         public int Name_To_ID_Categories(string Name, string TableName)
         {
@@ -94,6 +98,7 @@ namespace Cyrsach
             dataAdapter.Fill(bufferTable);
             return int.Parse(bufferTable.Rows[0][0].ToString());
         }
+
         //метод конвентирования Кода в Категории товаров/Должности
         public string ID_To_Name_Categories(int ID, string TableName)
         {
@@ -103,8 +108,8 @@ namespace Cyrsach
             bufferTable.Reset();
             dataAdapter.Fill(bufferTable);
             return bufferTable.Rows[0][0].ToString();
-
         }
+
         //метод конвентирования названий Товаров/Клиентов/Сотрудников в ID
         public int Name_To_ID_Datas(string Name, string TableName)
         {
@@ -115,7 +120,21 @@ namespace Cyrsach
             dataAdapter.Fill(bufferTable);
             return int.Parse(bufferTable.Rows[0][0].ToString());
         }
-        //метод, возвращающий строку со значениями по заданому ID и назанию таблицы
+
+        //метод конвентирования названий ID в Товаров/Клиентов/Сотрудников
+        public string ID_To_Name_Datas(int ID, string TableName)
+        {
+            string tab_attribute = "Фамилия";
+            if (TableName == "Товары") tab_attribute = "Название";
+            connection.Open();
+            dataAdapter = new OleDbDataAdapter($"SELECT {tab_attribute} FROM [{TableName}]\n WHERE ID = {ID}", connection);
+            connection.Close();
+            bufferTable.Reset();
+            dataAdapter.Fill(bufferTable);
+            return bufferTable.Rows[0][0].ToString();
+        }
+        
+        //метод, возвращающий строку таблицы со значениями по заданому ID и назанию таблицы
         public DataTable buffer_return(int ID, string TableName)
         {
             connection.Open();
@@ -138,20 +157,16 @@ namespace Cyrsach
             bufferTable.Clear();
             dataAdapter.Fill(bufferTable);
             connection.Close();
-            try
-            {
-                if (bufferTable.Rows[0][0] != null)
-                {
+            try {
+                if (bufferTable.Rows[0][0] != null) {
                     Familia += bufferTable.Rows[0][1].ToString();
                     Fam_Name += bufferTable.Rows[0][1].ToString();
                     Fam_Name += " " + bufferTable.Rows[0][2].ToString();
                     return int.Parse(bufferTable.Rows[0][0].ToString());
                 }
                 else return 0;
-
             }
-            catch
-            {
+            catch {
                 return 0;
             }
         }

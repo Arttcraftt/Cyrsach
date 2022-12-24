@@ -71,10 +71,35 @@ namespace Cyrsach
                         break;
                     case 2: //изменение транзакции
                         Tranzak_Form tranzak_Form = new Tranzak_Form();
+                        ID = int.Parse(ItemsDataGrid[0, ItemsDataGrid.CurrentRow.Index].Value.ToString());
+                        tranzak_Form.labelID.Text = ID.ToString();
+                        tranzak_Form.Text = "Изменить транзакцию";
+                        bufferTab = bufferer.buffer_return(ID, "Транзакции");
+                        int[] ids = new int[3];
+                        for(int i = 0;i < ids.Length; i++)
+                        {
+                            ids[i] = int.Parse(bufferTab.Rows[0][i+1].ToString());
+                        }
+                        tranzak_Form.labelWorker.Visible = true;
+                        tranzak_Form.labelCustom.Visible = true;
+                        tranzak_Form.labelItem.Visible = true;
+                        tranzak_Form.labelWorker.Text = bufferer.ID_To_Name_Datas(ids[0], "Сотрудники");
+                        tranzak_Form.labelCustom.Text = bufferer.ID_To_Name_Datas(ids[1], "Клиенты");
+                        tranzak_Form.labelItem.Text = bufferer.ID_To_Name_Datas(ids[2], "Товары");
+                        bufferTab.Reset();
                         tranzak_Form.Show();
                         break;
                     case 3: //изменение клиента
                         Customer_Form customer_Form = new Customer_Form();
+                        ID = int.Parse(CustomerDataGrid[0, CustomerDataGrid.CurrentRow.Index].Value.ToString());
+                        customer_Form.labelID.Text = ID.ToString();
+                        customer_Form.Text = "Изменить клиента";
+                        bufferTab = bufferer.buffer_return(ID, "Клиенты");
+                        customer_Form.textBoxFamilia.Text = bufferTab.Rows[0][1].ToString();
+                        customer_Form.textBoxName.Text = bufferTab.Rows[0][2].ToString();
+                        customer_Form.textBoxOtchestvo.Text = bufferTab.Rows[0][3].ToString();
+                        customer_Form.textBoxTelephone.Text = bufferTab.Rows[0][4].ToString();
+                        bufferTab.Reset();
                         customer_Form.Show();
                         break;
                 }

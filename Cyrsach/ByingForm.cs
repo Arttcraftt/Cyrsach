@@ -25,8 +25,8 @@ namespace Cyrsach
         {
             Tranzak_Form tranzak_Form = new Tranzak_Form();
             tranzak_Form.comboBoxWorker.DataBindings.Clear();
-            tranzak_Form.labelFamilia.Text = Familia;
-            tranzak_Form.labelFamilia.Visible = true;
+            tranzak_Form.labelWorker.Text = Familia;
+            tranzak_Form.labelWorker.Visible = true;
             tranzak_Form.comboBoxWorker.Visible = false;
             tranzak_Form.comboBoxWorker.Enabled = false;
             tranzak_Form.Show();

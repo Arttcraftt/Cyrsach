@@ -30,7 +30,7 @@ namespace Cyrsach
             }
             else
             {
-                runner.Bying(runner.Name_To_ID_Datas(labelFamilia.Text, "Сотрудники"), runner.Name_To_ID_Datas(comboBoxCustomer.Text, "Клиенты"), runner.Name_To_ID_Datas(comboBoxItem.Text, "Товары"));
+                runner.Bying(runner.Name_To_ID_Datas(labelWorker.Text, "Сотрудники"), runner.Name_To_ID_Datas(comboBoxCustomer.Text, "Клиенты"), runner.Name_To_ID_Datas(comboBoxItem.Text, "Товары"));
             }
             this.Close();
         }
