@@ -8,6 +8,7 @@ namespace Cyrsach
     {
         Query runner;
         Query reader;
+
         public Item_Form()
         {
             InitializeComponent();
@@ -22,9 +23,8 @@ namespace Cyrsach
 
         private void Enterer_Click(object sender, EventArgs e)
         {
-            
             if (labelID.Text != "Новый") {
-
+                runner.Update(int.Parse(labelID.Text), reader.Name_To_ID_Categories(comboBoxCategory.Text, "Категории_товаров"), Int32.Parse(textBoxQuantity.Text), Int32.Parse(textBoxCost.Text), textBoxName.Text);
             }
             else {
                 runner.Add(reader.Name_To_ID_Categories(comboBoxCategory.Text, "Категории_товаров"),Int32.Parse(textBoxQuantity.Text), Int32.Parse(textBoxCost.Text),textBoxName.Text);

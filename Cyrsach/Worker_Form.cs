@@ -8,6 +8,7 @@ namespace Cyrsach
     {
         Query runner;
         Query reader;
+
         public Worker_Form()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Cyrsach
         private void Enterer_Click(object sender, EventArgs e)
         {
             if (labelID.Text != "Новый") {
-
+                runner.Update(int.Parse(labelID.Text), reader.Name_To_ID_Categories(comboBoxPost.Text, "Должности"), textBoxFamilia.Text, textBoxName.Text, textBoxOtchestvo.Text, textBoxTelephone.Text, textBoxLogin.Text, textBoxPassword.Text);
             }
             else {
                 runner.Add(reader.Name_To_ID_Categories(comboBoxPost.Text, "Должности"), textBoxFamilia.Text, textBoxName.Text, textBoxOtchestvo.Text, textBoxTelephone.Text, textBoxLogin.Text, textBoxPassword.Text);

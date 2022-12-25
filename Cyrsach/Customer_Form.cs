@@ -7,6 +7,7 @@ namespace Cyrsach
     public partial class Customer_Form : Form
     {
         Query runner;
+
         public Customer_Form()
         {
             InitializeComponent();
@@ -16,7 +17,7 @@ namespace Cyrsach
         private void Enterer_Click(object sender, EventArgs e)
         {
             if (labelID.Text != "Новый") {
-
+                runner.Update(int.Parse(labelID.Text), textBoxFamilia.Text, textBoxName.Text, textBoxOtchestvo.Text, textBoxTelephone.Text);
             }
             else {
                 runner.Add(textBoxFamilia.Text, textBoxName.Text, textBoxOtchestvo.Text, textBoxTelephone.Text);

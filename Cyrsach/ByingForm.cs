@@ -1,4 +1,5 @@
-﻿using System;
+﻿//форма продавца
+using System;
 using System.Windows.Forms;
 
 namespace Cyrsach
@@ -39,11 +40,6 @@ namespace Cyrsach
             this.транзакции_фамилииTableAdapter.Fill(this.cyrsachDataSet2.Транзакции_фамилии);
 
             this.клиентыTableAdapter.Fill(this.cyrsachDataSet3.Клиенты);
-        }
-
-        private void comboBoxTabelsFilter_SelectionChangeCommitted  (object sender, EventArgs e)
-        {
-
         }
     }
 }

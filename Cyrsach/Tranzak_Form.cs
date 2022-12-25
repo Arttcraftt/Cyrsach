@@ -8,6 +8,7 @@ namespace Cyrsach
     {
         Query runner;
         Query reader;
+
         public Tranzak_Form()
         {
             InitializeComponent();
@@ -24,13 +25,16 @@ namespace Cyrsach
 
         private void Enterer_Click(object sender, EventArgs e)
         {
-            if(comboBoxWorker.Enabled == true)
-            {
-                runner.Bying(runner.Name_To_ID_Datas(comboBoxWorker.Text, "Сотрудники"), runner.Name_To_ID_Datas(comboBoxCustomer.Text, "Клиенты"), runner.Name_To_ID_Datas(comboBoxItem.Text, "Товары"));
+            if (labelID.Text == "Новый") {
+                if (comboBoxWorker.Enabled == true) {
+                    runner.Bying(runner.Name_To_ID_Datas(comboBoxWorker.Text, "Сотрудники"), runner.Name_To_ID_Datas(comboBoxCustomer.Text, "Клиенты"), runner.Name_To_ID_Datas(comboBoxItem.Text, "Товары"));
+                }
+                else {
+                    runner.Bying(runner.Name_To_ID_Datas(labelWorker.Text, "Сотрудники"), runner.Name_To_ID_Datas(comboBoxCustomer.Text, "Клиенты"), runner.Name_To_ID_Datas(comboBoxItem.Text, "Товары"));
+                }
             }
-            else
-            {
-                runner.Bying(runner.Name_To_ID_Datas(labelWorker.Text, "Сотрудники"), runner.Name_To_ID_Datas(comboBoxCustomer.Text, "Клиенты"), runner.Name_To_ID_Datas(comboBoxItem.Text, "Товары"));
+            else {
+                runner.Update(int.Parse(labelID.Text), runner.Name_To_ID_Datas(labelWorker.Text, "Сотрудники"), runner.Name_To_ID_Datas(comboBoxCustomer.Text, "Клиенты"), runner.Name_To_ID_Datas(comboBoxItem.Text, "Товары"));
             }
             this.Close();
         }

@@ -2,12 +2,12 @@
 using System;
 using System.Windows.Forms;
 
-
 namespace Cyrsach
 {
     public partial class Autorization : Form
     {
         Query runner;
+
         public Autorization()
         {
             InitializeComponent();

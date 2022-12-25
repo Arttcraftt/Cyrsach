@@ -11,6 +11,7 @@ namespace Cyrsach
         private static OleDbCommand command;
         public static OleDbDataAdapter dataAdapter;
         public DataTable bufferTable;
+
         public Query(string Conn)
         {
             connection = new OleDbConnection(Conn);
@@ -28,7 +29,7 @@ namespace Cyrsach
             return bufferTable;
         }
 
-        //методы добавления в таблицы
+        //методы добавления в таблицы:
         public void Add(string familia, string FirstName, string LastName, string telephone)
         {
             connection.Open();
@@ -66,11 +67,66 @@ namespace Cyrsach
             connection.Close();
         }
 
+        //методы обновления:
+        public void Update(int ID, string familia, string FirstName, string LastName, string telephone)
+        {
+            connection.Open();
+            command = new OleDbCommand("UPDATE [Клиенты] SET Фамилия = @Фамилия, Имя = @Имя, Отчество = @Отчество, Телефон = @Телефон WHERE ID = @ID", connection);
+            command.Parameters.AddWithValue("Фамилия", familia);
+            command.Parameters.AddWithValue("Имя", FirstName);
+            command.Parameters.AddWithValue("Отчество", LastName);
+            command.Parameters.AddWithValue("Телефон", telephone);
+            command.Parameters.AddWithValue("ID", ID);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void Update(int ID, int post, string familia, string FirstName, string LastName, string telephone, string Login, string Password)
+        {
+            connection.Open();
+            command = new OleDbCommand("UPDATE [Сотрудники] SET Должность = @Должность, Фамилия = @Фамилия, Имя = @Имя, Отчество = @Отчество, Телефон = @Телефон, Логин = @Логин, Пароль = @Пароль WHERE ID = @ID", connection);
+            command.Parameters.AddWithValue("Должность", post);
+            command.Parameters.AddWithValue("Фамилия", familia);
+            command.Parameters.AddWithValue("Имя", FirstName);
+            command.Parameters.AddWithValue("Отчество", LastName);
+            command.Parameters.AddWithValue("Телефон", telephone);
+            command.Parameters.AddWithValue("Логин", Login);
+            command.Parameters.AddWithValue("Пароль", Password);
+            command.Parameters.AddWithValue("ID", ID);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void Update(int ID, int category, int quantity, int cost, string Name)
+        {
+            connection.Open();
+            command = new OleDbCommand("UPDATE [Товары] SET Категория = @Категория, Количество = @Количество, Цена = @Цена, Название = @Название WHERE ID = @ID", connection);
+            command.Parameters.AddWithValue("Категория", category);
+            command.Parameters.AddWithValue("Количество", quantity);
+            command.Parameters.AddWithValue("Цена", cost);
+            command.Parameters.AddWithValue("Название", Name);
+            command.Parameters.AddWithValue("ID", ID);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void Update(int ID, int Worker, int Customer, int Item)
+        {
+            connection.Open();
+            command = new OleDbCommand("UPDATE [Транзакции] SET Сотрудник = @Сотрудник, Клиент = @Клиент, Товар = @Товар WHERE ID = @ID", connection);
+            command.Parameters.AddWithValue("Сотрудник", Worker);
+            command.Parameters.AddWithValue("Клиент", Customer);
+            command.Parameters.AddWithValue("Товар", Item);
+            command.Parameters.AddWithValue("ID", ID);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
         //метод удаления
         public void Delete(int ID, string TableName)
         {
             connection.Open();
-            command = new OleDbCommand($"DELETE FROM [{TableName}] WHERE ID = {ID}", connection);
+            command = new OleDbCommand($"DELETE * FROM [{TableName}]\nWHERE ID = {ID};", connection);
             command.ExecuteNonQuery();
             connection.Close();
         }
@@ -99,7 +155,7 @@ namespace Cyrsach
             return int.Parse(bufferTable.Rows[0][0].ToString());
         }
 
-        //метод конвентирования Кода в Категории товаров/Должности
+        //метод конвентирования Кода в названия Категории товаров/Должности
         public string ID_To_Name_Categories(int ID, string TableName)
         {
             connection.Open();
@@ -121,7 +177,7 @@ namespace Cyrsach
             return int.Parse(bufferTable.Rows[0][0].ToString());
         }
 
-        //метод конвентирования названий ID в Товаров/Клиентов/Сотрудников
+        //метод конвентирования ID в названия Товаров/Клиентов/Сотрудников
         public string ID_To_Name_Datas(int ID, string TableName)
         {
             string tab_attribute = "Фамилия";
@@ -134,7 +190,7 @@ namespace Cyrsach
             return bufferTable.Rows[0][0].ToString();
         }
         
-        //метод, возвращающий строку таблицы со значениями по заданому ID и назанию таблицы
+        //метод, возвращающий строку таблицы со значениями по заданому ID названию таблицы
         public DataTable buffer_return(int ID, string TableName)
         {
             connection.Open();

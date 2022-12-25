@@ -62,11 +62,6 @@
             this.Insert_Customer = new System.Windows.Forms.Button();
             this.AdminPanel = new System.Windows.Forms.Panel();
             this.AdmincomboBox = new System.Windows.Forms.ComboBox();
-            this.SortPanel = new System.Windows.Forms.Panel();
-            this.comboBoxTabelsSort = new System.Windows.Forms.ComboBox();
-            this.SortButton = new System.Windows.Forms.Button();
-            this.comboBoxModifier = new System.Windows.Forms.ComboBox();
-            this.comboBoxAttributesSort = new System.Windows.Forms.ComboBox();
             this.клиентыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cyrsachDataSet3 = new Cyrsach.cyrsachDataSet3();
             this.клиентыTableAdapter = new Cyrsach.cyrsachDataSet3TableAdapters.КлиентыTableAdapter();
@@ -82,11 +77,6 @@
             this.имяDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.отчествоDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.телефонDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Filterpanel = new System.Windows.Forms.Panel();
-            this.comboBoxTabelsFilter = new System.Windows.Forms.ComboBox();
-            this.FilterButton = new System.Windows.Forms.Button();
-            this.comboBoxValue = new System.Windows.Forms.ComboBox();
-            this.comboBoxAttributesFilter = new System.Windows.Forms.ComboBox();
             this.UpDatebutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.WorkerDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сотрудникидолжностиBindingSource)).BeginInit();
@@ -98,13 +88,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.транзакциифамилииBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet2)).BeginInit();
             this.AdminPanel.SuspendLayout();
-            this.SortPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.клиентыBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerDataGrid)).BeginInit();
-            this.Filterpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // WorkerDataGrid
@@ -363,75 +351,6 @@
             this.AdmincomboBox.Size = new System.Drawing.Size(183, 28);
             this.AdmincomboBox.TabIndex = 9;
             // 
-            // SortPanel
-            // 
-            this.SortPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.SortPanel.Controls.Add(this.comboBoxTabelsSort);
-            this.SortPanel.Controls.Add(this.SortButton);
-            this.SortPanel.Controls.Add(this.comboBoxModifier);
-            this.SortPanel.Controls.Add(this.comboBoxAttributesSort);
-            this.SortPanel.Location = new System.Drawing.Point(827, 578);
-            this.SortPanel.Name = "SortPanel";
-            this.SortPanel.Size = new System.Drawing.Size(222, 139);
-            this.SortPanel.TabIndex = 9;
-            // 
-            // comboBoxTabelsSort
-            // 
-            this.comboBoxTabelsSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTabelsSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.comboBoxTabelsSort.FormattingEnabled = true;
-            this.comboBoxTabelsSort.Items.AddRange(new object[] {
-            "Сотрудники",
-            "Товары",
-            "Транзакции",
-            "Клиенты"});
-            this.comboBoxTabelsSort.Location = new System.Drawing.Point(3, 3);
-            this.comboBoxTabelsSort.Name = "comboBoxTabelsSort";
-            this.comboBoxTabelsSort.Size = new System.Drawing.Size(216, 28);
-            this.comboBoxTabelsSort.TabIndex = 5;
-            // 
-            // SortButton
-            // 
-            this.SortButton.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.SortButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SortButton.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SortButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.SortButton.Location = new System.Drawing.Point(3, 105);
-            this.SortButton.Name = "SortButton";
-            this.SortButton.Size = new System.Drawing.Size(216, 30);
-            this.SortButton.TabIndex = 4;
-            this.SortButton.Text = "Сортировать";
-            this.SortButton.UseVisualStyleBackColor = false;
-            // 
-            // comboBoxModifier
-            // 
-            this.comboBoxModifier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.comboBoxModifier.FormattingEnabled = true;
-            this.comboBoxModifier.Items.AddRange(new object[] {
-            "По возрастанию",
-            "По убыванию"});
-            this.comboBoxModifier.Location = new System.Drawing.Point(3, 71);
-            this.comboBoxModifier.Name = "comboBoxModifier";
-            this.comboBoxModifier.Size = new System.Drawing.Size(216, 28);
-            this.comboBoxModifier.TabIndex = 1;
-            // 
-            // comboBoxAttributesSort
-            // 
-            this.comboBoxAttributesSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAttributesSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.comboBoxAttributesSort.FormattingEnabled = true;
-            this.comboBoxAttributesSort.Items.AddRange(new object[] {
-            "Должность",
-            "Имя",
-            "Фамилия",
-            "Отчество",
-            "Телефон"});
-            this.comboBoxAttributesSort.Location = new System.Drawing.Point(3, 37);
-            this.comboBoxAttributesSort.Name = "comboBoxAttributesSort";
-            this.comboBoxAttributesSort.Size = new System.Drawing.Size(216, 28);
-            this.comboBoxAttributesSort.TabIndex = 0;
-            // 
             // клиентыBindingSource
             // 
             this.клиентыBindingSource.DataMember = "Клиенты";
@@ -530,76 +449,6 @@
             this.телефонDataGridViewTextBoxColumn1.HeaderText = "Телефон";
             this.телефонDataGridViewTextBoxColumn1.Name = "телефонDataGridViewTextBoxColumn1";
             // 
-            // Filterpanel
-            // 
-            this.Filterpanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Filterpanel.Controls.Add(this.comboBoxTabelsFilter);
-            this.Filterpanel.Controls.Add(this.FilterButton);
-            this.Filterpanel.Controls.Add(this.comboBoxValue);
-            this.Filterpanel.Controls.Add(this.comboBoxAttributesFilter);
-            this.Filterpanel.Location = new System.Drawing.Point(599, 578);
-            this.Filterpanel.Name = "Filterpanel";
-            this.Filterpanel.Size = new System.Drawing.Size(222, 139);
-            this.Filterpanel.TabIndex = 10;
-            // 
-            // comboBoxTabelsFilter
-            // 
-            this.comboBoxTabelsFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTabelsFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.comboBoxTabelsFilter.FormattingEnabled = true;
-            this.comboBoxTabelsFilter.Items.AddRange(new object[] {
-            "Сотрудники",
-            "Товары",
-            "Транзакции",
-            "Клиенты"});
-            this.comboBoxTabelsFilter.Location = new System.Drawing.Point(3, 3);
-            this.comboBoxTabelsFilter.Name = "comboBoxTabelsFilter";
-            this.comboBoxTabelsFilter.Size = new System.Drawing.Size(216, 28);
-            this.comboBoxTabelsFilter.TabIndex = 5;
-            this.comboBoxTabelsFilter.SelectedValueChanged += new System.EventHandler(this.comboBoxTabelsFilter_SelectedValueChanged);
-            // 
-            // FilterButton
-            // 
-            this.FilterButton.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.FilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.FilterButton.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FilterButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FilterButton.Location = new System.Drawing.Point(3, 105);
-            this.FilterButton.Name = "FilterButton";
-            this.FilterButton.Size = new System.Drawing.Size(216, 30);
-            this.FilterButton.TabIndex = 4;
-            this.FilterButton.Text = "Фильтровать";
-            this.FilterButton.UseVisualStyleBackColor = false;
-            // 
-            // comboBoxValue
-            // 
-            this.comboBoxValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.comboBoxValue.FormattingEnabled = true;
-            this.comboBoxValue.Items.AddRange(new object[] {
-            "По возрастанию",
-            "По убыванию"});
-            this.comboBoxValue.Location = new System.Drawing.Point(3, 71);
-            this.comboBoxValue.Name = "comboBoxValue";
-            this.comboBoxValue.Size = new System.Drawing.Size(216, 28);
-            this.comboBoxValue.TabIndex = 1;
-            // 
-            // comboBoxAttributesFilter
-            // 
-            this.comboBoxAttributesFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAttributesFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.comboBoxAttributesFilter.FormattingEnabled = true;
-            this.comboBoxAttributesFilter.Items.AddRange(new object[] {
-            "Должность",
-            "Имя",
-            "Фамилия",
-            "Отчество",
-            "Телефон"});
-            this.comboBoxAttributesFilter.Location = new System.Drawing.Point(3, 37);
-            this.comboBoxAttributesFilter.Name = "comboBoxAttributesFilter";
-            this.comboBoxAttributesFilter.Size = new System.Drawing.Size(216, 28);
-            this.comboBoxAttributesFilter.TabIndex = 0;
-            // 
             // UpDatebutton
             // 
             this.UpDatebutton.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -621,11 +470,9 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1061, 726);
             this.Controls.Add(this.UpDatebutton);
-            this.Controls.Add(this.Filterpanel);
             this.Controls.Add(this.CustomerDataGrid);
             this.Controls.Add(this.labelFLnames);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SortPanel);
             this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.TranzakDataGrid);
             this.Controls.Add(this.ItemsDataGrid);
@@ -643,13 +490,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.транзакциифамилииBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet2)).EndInit();
             this.AdminPanel.ResumeLayout(false);
-            this.SortPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.клиентыBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cyrsachDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerDataGrid)).EndInit();
-            this.Filterpanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -684,30 +529,20 @@
         private System.Windows.Forms.Button Change;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Insert_Customer;
-        private System.Windows.Forms.Panel SortPanel;
         private cyrsachDataSet3 cyrsachDataSet3;
         private System.Windows.Forms.BindingSource клиентыBindingSource;
         private cyrsachDataSet3TableAdapters.КлиентыTableAdapter клиентыTableAdapter;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label labelFLnames;
-        private System.Windows.Forms.ComboBox comboBoxAttributesSort;
-        private System.Windows.Forms.ComboBox comboBoxModifier;
-        private System.Windows.Forms.Button SortButton;
         private cyrsachDataSet9 cyrsachDataSet9;
         private cyrsachDataSet9TableAdapters.КлиентыTableAdapter клиентыTableAdapter1;
         private cyrsachDataSet6 cyrsachDataSet6;
         private cyrsachDataSet6TableAdapters.КлиентыTableAdapter клиентыTableAdapter2;
-        private System.Windows.Forms.ComboBox comboBoxTabelsSort;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn телефонDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Panel Filterpanel;
-        private System.Windows.Forms.ComboBox comboBoxTabelsFilter;
-        private System.Windows.Forms.Button FilterButton;
-        private System.Windows.Forms.ComboBox comboBoxValue;
-        private System.Windows.Forms.ComboBox comboBoxAttributesFilter;
         public System.Windows.Forms.Panel AdminPanel;
         public System.Windows.Forms.DataGridView WorkerDataGrid;
         public System.Windows.Forms.DataGridView ItemsDataGrid;

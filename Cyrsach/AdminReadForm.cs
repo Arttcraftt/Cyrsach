@@ -7,16 +7,15 @@ namespace Cyrsach
     public partial class AdminReadForm : Form
     {
         Query bufferer;
+
         public AdminReadForm()
         {
             InitializeComponent();
             bufferer = new Query(ConnectionString.ConnStr);
         }
 
-
         private void AdminReadForm_Load(object sender, EventArgs e)
-        {
-            
+        { 
             this.клиентыTableAdapter2.Fill(this.cyrsachDataSet6.Клиенты);
             
             this.клиентыTableAdapter1.Fill(this.cyrsachDataSet9.Клиенты);
@@ -28,7 +27,6 @@ namespace Cyrsach
             this.товари_категорииTableAdapter.Fill(this.cyrsachDataSet1.Товари_категории);
             
             this.сотрудники_должностиTableAdapter.Fill(this.cyrsachDataSet.Сотрудники_должности);
-
         }
         private void Change_Click(object sender, EventArgs e)
         {
@@ -71,13 +69,12 @@ namespace Cyrsach
                         break;
                     case 2: //изменение транзакции
                         Tranzak_Form tranzak_Form = new Tranzak_Form();
-                        ID = int.Parse(ItemsDataGrid[0, ItemsDataGrid.CurrentRow.Index].Value.ToString());
+                        ID = int.Parse(TranzakDataGrid[0, TranzakDataGrid.CurrentRow.Index].Value.ToString());
                         tranzak_Form.labelID.Text = ID.ToString();
                         tranzak_Form.Text = "Изменить транзакцию";
                         bufferTab = bufferer.buffer_return(ID, "Транзакции");
                         int[] ids = new int[3];
-                        for(int i = 0;i < ids.Length; i++)
-                        {
+                        for(int i = 0;i < ids.Length; i++){
                             ids[i] = int.Parse(bufferTab.Rows[0][i+1].ToString());
                         }
                         tranzak_Form.labelWorker.Visible = true;
@@ -106,6 +103,7 @@ namespace Cyrsach
             }
             else MessageBox.Show("Выберите значение в списке в низу панели", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
         private void UpDatebutton_Click(object sender, EventArgs e)
         {
             this.клиентыTableAdapter2.Fill(this.cyrsachDataSet6.Клиенты);
@@ -121,15 +119,47 @@ namespace Cyrsach
             this.сотрудники_должностиTableAdapter.Fill(this.cyrsachDataSet.Сотрудники_должности);
         }
 
-
         private void Delete_Click(object sender, EventArgs e)
         {
-
+            if (AdmincomboBox.Text != "")
+            {
+                int ID;
+                DataTable bufferTab = new DataTable();
+                switch (AdmincomboBox.SelectedIndex)
+                {
+                    case 0: //удаление сотрудника
+                        ID = int.Parse(WorkerDataGrid[0, WorkerDataGrid.CurrentRow.Index].Value.ToString());
+                        bufferTab = bufferer.buffer_return(ID, "Сотрудники");
+                        if (messageDelete(bufferTab.Rows[0][2].ToString() + " " + bufferTab.Rows[0][3].ToString() + " " + bufferTab.Rows[0][4].ToString()) == true) bufferer.Delete(ID, "Сотрудники");
+                        bufferTab.Reset();
+                        break;
+                    case 1: //удаление товара
+                        ID = int.Parse(ItemsDataGrid[0, ItemsDataGrid.CurrentRow.Index].Value.ToString());
+                        bufferTab = bufferer.buffer_return(ID, "Товары");
+                        string nameItem = bufferTab.Rows[0][4].ToString();
+                        if (messageDelete(bufferer.ID_To_Name_Categories(int.Parse(bufferTab.Rows[0][1].ToString()), "Категории_товаров") + " " + nameItem) == true) bufferer.Delete(ID, "Товары");
+                        bufferTab.Reset();
+                        break;
+                    case 2: //удаление транзакции
+                        ID = int.Parse(TranzakDataGrid[0, TranzakDataGrid.CurrentRow.Index].Value.ToString());
+                        if (messageDelete("Транзакцию №" + ID) == true) bufferer.Delete(ID, "Транзакции");
+                        bufferTab.Reset();
+                        break;
+                    case 3: //удаление клиента
+                        ID = int.Parse(CustomerDataGrid[0, CustomerDataGrid.CurrentRow.Index].Value.ToString());
+                        bufferTab = bufferer.buffer_return(ID, "Клиенты");
+                        if (messageDelete(bufferTab.Rows[0][1].ToString() + " " + bufferTab.Rows[0][2].ToString() + " " + bufferTab.Rows[0][3].ToString()) == true) bufferer.Delete(ID, "Клиенты");
+                        bufferTab.Reset();
+                        break;
+                }
+            }
+            else MessageBox.Show("Выберите значение в списке в низу панели", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void comboBoxTabelsFilter_SelectedValueChanged(object sender, EventArgs e)
+        private bool messageDelete(string nameFIO)
         {
-
+            if(MessageBox.Show($"Вы действительно хотите удалить:\n {nameFIO}?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) return true;
+            else return false;
         }
 
         private void Insert(object sender, EventArgs e)
@@ -138,19 +168,19 @@ namespace Cyrsach
             {
                 switch (AdmincomboBox.SelectedIndex)
                 {
-                    case 0:
+                    case 0://добавление сотрудника
                         Worker_Form worker_Form = new Worker_Form();
                         worker_Form.Show();
                         break;
-                    case 1:
+                    case 1://добавление товара
                         Item_Form item_Form = new Item_Form();
                         item_Form.Show();
                         break;
-                    case 2:
+                    case 2://добавление транзакции
                         Tranzak_Form tranzak_Form = new Tranzak_Form();
                         tranzak_Form.Show();
                         break;
-                    case 3:
+                    case 3://добавление клиента
                         Customer_Form customer_Form = new Customer_Form();
                         customer_Form.Show();
                         break;
@@ -158,6 +188,5 @@ namespace Cyrsach
             }
             else MessageBox.Show("Выберите значение в списке в низу панели", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
     }
 }
