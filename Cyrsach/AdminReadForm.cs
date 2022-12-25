@@ -1,4 +1,5 @@
-﻿using System;
+﻿//форма для администратора и чтения
+using System;
 using System.Windows.Forms;
 using System.Data;
 

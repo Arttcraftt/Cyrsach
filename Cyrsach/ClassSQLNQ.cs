@@ -1,4 +1,4 @@
-﻿//класс с методами для SQL комманд
+﻿//класс с методами для SQL команд
 using System;
 using System.Data.OleDb;
 using System.Data;
